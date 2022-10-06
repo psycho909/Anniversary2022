@@ -1,0 +1,117 @@
+.default {
+	.gbox-wrap {
+		max-width: 600px;
+		width: 100%;
+		background-image: linear-gradient(to bottom, #ffa300 40px, #7e7770 41px, #7e7770 42px, #e7e4dd 43px, #e7e4dd 100%);
+		border-radius: 20px;
+		border: 2px solid #7e7770;
+		box-sizing: border-box;
+		padding: 94px 20px 20px 20px;
+		@include media {
+			max-width: vw(600);
+			background-image: linear-gradient(to bottom, #ffa300 vw(40), #7e7770 vw(41), #7e7770 vw(42), #e7e4dd vw(43), #e7e4dd 100%);
+		}
+		&:before {
+			content: "";
+			width: 84px;
+			height: 20px;
+			background-size: 100%;
+			background-image: url("./img/lightbox/desc.png");
+			position: absolute;
+			top: 10px;
+			right: 24px;
+			@include media {
+				width: vw(84);
+				height: vw(20);
+				top: vw(10);
+				right: vw(24);
+			}
+		}
+	}
+	.gbox-close {
+		width: 43px;
+		height: 43px;
+		background-size: 100%;
+		background-image: url("./img/lightbox/btn-close.png");
+		font-size: 0;
+		top: 8px;
+		right: -66px;
+		@include media {
+			width: vw(43);
+			height: vw(43);
+			top: vw(8);
+			right: vw(-66);
+		}
+	}
+	.gbox-btn {
+		width: 203px;
+		height: 66px;
+		background-size: 100%;
+		font-size: 0;
+		background-color: transparent;
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+		.lb-btn-confirm {
+			background-image: url("./img/lightbox/lb-btn-confirm.png");
+		}
+	}
+	.gbox-content {
+		font-size: 20px;
+		color: #4f4f4f;
+		@include media {
+			font-size: vw(20);
+		}
+	}
+	.lb-title {
+		font-weight: bold;
+		font-size: 40px;
+		color: #2d2d2d;
+		@include media {
+			font-size: vw(40);
+		}
+	}
+}
+
+.lb-lottery {
+	&-historyReward {
+		width: 140px;
+		height: 140px;
+		background-size: 100%;
+		background-image: url("./img/lightbox/history-reward-bg.png");
+		@include media {
+			width: vw(140);
+			height: vw(140);
+		}
+	}
+	&-reward {
+		width: 245px;
+		height: 245px;
+		background-size: 100%;
+		background-image: url("./img/lightbox/reward-bg.png");
+		@include media {
+			width: vw(245);
+			height: vw(245);
+		}
+	}
+	&-task {
+		width: 48px;
+		height: 47px;
+		background-size: 100%;
+		background-image: url("./img/lightbox/icon-task.png");
+		@include media {
+			width: vw(48);
+			height: vw(47);
+		}
+		&.complete {
+			width: 59px;
+			height: 36px;
+			background-size: 100%;
+			background-image: url("./img/lightbox/icon-complete.png");
+			@include media {
+				width: vw(59);
+				height: vw(36);
+			}
+		}
+	}
+}

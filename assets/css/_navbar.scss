@@ -28,18 +28,25 @@
 			margin-right: 0;
 		}
 	}
-	&-search {
+	&-login {
 		padding: 0 90px;
 		display: flex;
 		align-items: center;
 		border-left: 1px solid #8b8682;
+		box-sizing: border-box;
 		&Btn {
 			width: 179px;
 			height: 59px;
 			background-size: cover;
-			background-image: url("./img/navbar/btn-search1-off.png");
-			display: inline-block;
-			box-sizing: border-box;
+			background-image: url("./img/navbar/btn-login-off.png");
+		}
+	}
+	&-logout {
+		&Btn {
+			width: 89px;
+			height: 59px;
+			background-size: cover;
+			background-image: url("./img/navbar/btn-logout-off.png");
 		}
 	}
 }

@@ -22,7 +22,7 @@ const indexStore = new Vuex.Store({
 	mutations: {}
 });
 
-// Message();
+Message();
 
 const vm = new Vue({
 	el: "#app",

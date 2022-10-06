@@ -19,8 +19,8 @@ const navbar = {
                 <a href="javascript:;" class="navbar-nav">抽獎整備室</a>
                 <a href="javascript:;" class="navbar-nav">小喵機密X檔案</a>
             </div>
-            <div class="navbar-search">
-                <a href="javascript:;" class="navbar-searchBtn"></a>
+            <div class="navbar-login">
+                <a href="javascript:;" class="navbar-loginBtn"></a>
             </div>
         </div>
     `
