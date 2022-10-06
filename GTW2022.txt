@@ -1,0 +1,7 @@
+首頁 index
+登入 login
+選單 nav-bar
+遊戲數據頁 game-data
+抽獎頁 lottery
+
+跳窗 lightbox.js

@@ -1,0 +1,1183 @@
+﻿@import url(./normalize.css);
+
+@function vw($size, $breakpoint: 768) {
+    @return ($size / $breakpoint) * 100vw;
+}
+
+@mixin backContain {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+html {
+    font-family: "PingFangTC-Regular", "Heiti TC", "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    body {
+        margin: 0;
+        font-size: 0;
+        background-color: #ab5b3a;
+        user-select: none;
+
+        min-height: 100vh;
+        box-sizing: border-box;
+        padding-bottom: vw(50);
+
+        touch-action: manipulation;
+    }
+
+    .container {
+        width: 100%;
+        height: vw(1334);
+
+        background-image: url(./img/body-bg.jpg);
+        background-size: cover;
+        background-position: center top;
+
+        box-sizing: border-box;
+        padding-top: vw(40);
+    }
+
+    .logo {
+        width: vw(304);
+        height: vw(86);
+
+        background-image: url(./img/logo.png);
+        @include backContain();
+        margin: 0 auto vw(244) auto;
+    }
+
+    .date {
+        display: flex;
+        width: vw(600);
+
+        background-color: #0d3543;
+        border: 2px solid #f0feff;
+
+        border-radius: vw(50);
+
+        box-sizing: border-box;
+        padding: vw(8) vw(0);
+        margin: 0 auto vw(45) auto;
+        font-size: vw(30);
+        font-weight: bold;
+        color: #ffffed;
+
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+// 資訊列
+
+.info-bar {
+    display: flex;
+    flex-direction: row;
+
+    margin: 0 auto vw(35) auto;
+
+    justify-content: center;
+}
+
+.infoContent {
+    background-color: #571903;
+    border: 2px solid #ffffff;
+
+    box-sizing: border-box;
+    padding: vw(15) vw(80);
+
+    border-radius: vw(50);
+    position: relative;
+
+    z-index: 2;
+    &.money {
+        text-align: center;
+        min-width: vw(240);
+        &::before {
+            position: absolute;
+            display: inline-block;
+            width: vw(96);
+            height: vw(78);
+            content: "";
+            left: vw(-35);
+            top: 44%;
+            transform: translateY(-50%);
+
+            @include backContain();
+            background-image: url(./img/infobar-gold.png);
+        }
+        span {
+            display: inline-block;
+            text-align: center;
+        }
+    }
+    &.heart {
+        min-width: vw(265);
+        margin-left: vw(75);
+        text-align: center;
+
+        &::before {
+            position: absolute;
+            display: inline-block;
+            width: vw(86);
+            height: vw(73);
+            content: "";
+            left: vw(-22);
+            top: 44%;
+            transform: translateY(-50%);
+
+            @include backContain();
+            background-image: url(./img/infobar-heart.png);
+        }
+    }
+
+    span {
+        color: #ffffff;
+
+        font-size: vw(30);
+        font-weight: bold;
+    }
+
+    .infoBtn {
+        display: inline-block;
+        position: absolute;
+        width: vw(40);
+        height: vw(40);
+
+        background-image: url(./img/btn-infobar.png);
+        @include backContain();
+
+        right: vw(15);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .clickPop {
+        position: absolute;
+        bottom: vw(-132);
+
+        display: flex;
+        min-height: vw(112);
+        box-sizing: border-box;
+        padding: 0 vw(20);
+
+        background-color: #ffde50;
+        border: 2px solid #571903;
+        border-radius: vw(30);
+
+        align-items: center;
+        justify-content: center;
+
+        animation: commonPopupActive 0.25s linear forwards;
+
+        word-break: break-all;
+        &.hide {
+            display: none;
+        }
+        &::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: vw(-14);
+
+            width: vw(20);
+            height: vw(20);
+
+            background-color: #ffde50;
+
+            border-top: 2px solid #571903;
+            border-right: 2px solid #571903;
+
+            transform: rotate(-45deg) skew(-15deg, -15deg);
+        }
+        &.money {
+            width: vw(370);
+            left: vw(-68);
+
+            div {
+                display: flex;
+                align-items: center;
+                &::before {
+                    content: "";
+                    @include backContain();
+                    width: vw(78);
+                    height: vw(73);
+
+                    margin-right: vw(5);
+                }
+                &:nth-child(1)::before {
+                    background-image: url(./img/infobar-coin-gold.png);
+                }
+                &:nth-child(2) {
+                    margin-left: vw(10);
+                }
+                &:nth-child(2)::before {
+                    background-image: url(./img/infobar-coin-silver.png);
+                }
+            }
+            &::before {
+                right: vw(90);
+            }
+        }
+        &.heart {
+            width: vw(315);
+            left: vw(-9);
+            padding: 0 vw(10);
+            &::before {
+                right: vw(70);
+            }
+        }
+        div {
+            width: 50%;
+            color: #571903;
+            font-size: vw(30);
+            font-weight: bold;
+
+            &#LeftTime {
+                width: 100%;
+
+                font-size: vw(28);
+            }
+        }
+    }
+}
+
+// 主題包
+
+.digContent {
+    height: vw(450);
+
+    position: relative;
+}
+
+@keyframes dig {
+    0% {
+    }
+    100% {
+    }
+}
+
+.ani-dig {
+    position: absolute;
+    width: vw(447);
+    height: vw(335);
+
+    top: 0;
+    left: 0;
+
+    @include backContain();
+    background-image: url(./img/ani-miner-stand.png);
+
+    &.ani {
+        background-image: url(./img/ani-miner-digging.png);
+    }
+}
+
+.topicGift {
+    position: absolute;
+    top: 0;
+    right: vw(30);
+
+    width: vw(219);
+    height: vw(158);
+}
+
+.presentPic {
+    position: absolute;
+    top: 0;
+    left: 57%;
+    transform: translateX(-50%);
+    width: vw(128);
+    height: vw(108);
+
+    @include backContain();
+    background-image: url(./img/btn-getGift-present.png);
+
+    &.click {
+        animation: present 0.5s infinite ease-in-out alternate-reverse;
+    }
+}
+
+@keyframes present {
+    50% {
+        transform: translateX(-50%) rotate(0);
+    }
+    70% {
+        transform: translateX(-50%) rotate(5deg);
+    }
+}
+
+.presentText {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: vw(219);
+    height: vw(69);
+
+    @include backContain();
+    background-image: url(./img/btn-getGift-text.png);
+}
+
+//商店與說明按鈕
+
+.BtnContent {
+    display: flex;
+    margin: 0 auto;
+
+    justify-content: center;
+    align-items: baseline;
+    a {
+        display: inline-block;
+
+        @include backContain();
+    }
+}
+
+.store {
+    width: vw(219);
+    height: vw(256);
+
+    background-image: url(./img/btn-store.png);
+}
+
+.descriptionPop {
+    width: vw(223);
+    height: vw(243);
+
+    background-image: url(./img/btn-description.png);
+
+    margin-left: vw(70);
+}
+
+//導引pop
+
+.descriptWrap {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    z-index: 900;
+
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    div {
+        width: vw(220);
+        height: vw(200);
+        position: absolute;
+        z-index: 2;
+        &[data-index="1"] {
+            top: vw(700);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &[data-index="2"] {
+            top: 0;
+            right: 0;
+        }
+        &[data-index="3"] {
+            top: 0;
+            right: 0;
+        }
+        &[data-index="4"] {
+            top: 0;
+            right: 0;
+        }
+        &[data-index="5"] {
+            top: vw(600);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: vw(1334);
+
+        position: relative;
+        z-index: 1;
+    }
+
+    &.hide {
+        display: none;
+    }
+}
+
+//gbox//
+
+.gbox-default {
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    .gbox-wrap {
+        max-width: 100%;
+        width: vw(748);
+
+        box-sizing: border-box;
+        margin: 0;
+        padding: vw(40) 0 vw(55) 0;
+
+        background-color: #fff1d0;
+        border: vw(5) solid #f8ffff;
+
+        border-radius: 50px;
+
+        animation: commonPopupActive 0.25s linear forwards;
+    }
+
+    .gbox-title {
+        padding: 0;
+
+        @include backContain();
+    }
+
+    .gbox-content {
+        padding: vw(35) 0;
+    }
+
+    .gboxText {
+        color: #0f4db3;
+        font-size: vw(50);
+        font-weight: bold;
+
+        text-align: center;
+
+        word-break: break-all;
+        span {
+            word-break: break-all;
+        }
+    }
+
+    .gbox-action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gbox-btn {
+        display: flex;
+        width: vw(266);
+        height: vw(93);
+
+        margin: 0;
+        padding: 0;
+
+        justify-content: center;
+        align-items: center;
+
+        background-color: transparent;
+
+        @include backContain();
+
+        background-image: url(./img/gbox-Btn.png);
+        color: #0f4db3;
+        font-size: vw(45);
+        font-weight: bold;
+        &.confirm {
+            background-image: url(./img/gbox-Btn-confirm.png);
+        }
+        &.cancel {
+            background-image: url(./img/gbox-Btn-cancel.png);
+        }
+        &.backpack {
+            background-image: url(./img/gbox-Btn-backpack.png);
+        }
+        &.margin {
+            margin-left: vw(50);
+        }
+        &.teach {
+            background-image: url(./img/gbox-teach.png);
+        }
+    }
+
+    .gbox-close {
+        width: vw(85);
+        height: vw(85);
+
+        @include backContain();
+
+        padding: 0;
+        margin: 0;
+
+        top: vw(-95);
+
+        background-image: url(./img/gbox-close.png);
+    }
+}
+
+//活動說明
+.descriptBox {
+    .gbox-wrap {
+        padding-left: vw(10);
+    }
+    .gbox-title {
+        width: vw(357);
+        height: vw(91);
+
+        margin: 0 auto;
+
+        background-image: url(./img/gbox-title-description.png);
+    }
+
+    .scrollOuter {
+        width: vw(660);
+        height: vw(638);
+
+        box-sizing: border-box;
+        background-color: #ffffff;
+        border: vw(4) solid #f2e7cc;
+        border-radius: 20px;
+
+        padding: vw(40) vw(10) vw(40) vw(20);
+    }
+
+    ul {
+        margin: 0;
+        list-style: none;
+
+        padding-left: vw(30);
+    }
+
+    li {
+        font-size: vw(30);
+        font-weight: bold;
+        color: #1b1d5f;
+
+        text-align: justify;
+
+        margin-bottom: vw(40);
+
+        word-break: break-all;
+        position: relative;
+        span {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: vw(-30);
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+//兌獎說明
+.descriptBox.descript2 {
+    .gbox-title {
+        background-image: url(./img/gbox-title-description2.png);
+    }
+}
+
+.gbox-default.text {
+    .gbox-content {
+        padding: vw(50) 0 vw(60) 0;
+    }
+}
+
+//挖礦獎勵
+.gboxCoin {
+    width: vw(700);
+    height: vw(720);
+    @include backContain();
+
+    margin: 0 auto;
+
+    &.silver {
+        background-image: url(./img/gbox-getCoin-silver.png);
+    }
+    &.gold {
+        background-image: url(./img/gbox-getCoin-gold.png);
+    }
+    &.thx {
+        background-image: url(./img/gbox-getCoin-thx.png);
+    }
+}
+
+//背包教學
+.descriptBox.backpack {
+    .gbox-title {
+        width: vw(700);
+        height: vw(91);
+
+        background-image: url(./img/gbox-title-backpack.png);
+    }
+    .scrollOuter {
+        padding: vw(30);
+    }
+
+    ul {
+        list-style: none;
+
+        padding-left: vw(170);
+    }
+
+    li {
+        position: relative;
+        font-size: vw(30);
+        color: #1b1d5f;
+        span {
+            position: absolute;
+            left: vw(-95);
+            top: 0;
+
+            &::before {
+                display: inline-block;
+                content: "";
+                width: vw(41);
+                height: vw(38);
+                position: absolute;
+                left: vw(-50);
+                @include backContain();
+                background-image: url(./img/gbox-icon-coin.png);
+            }
+        }
+
+        div {
+            width: 100%;
+            margin-top: vw(20);
+        }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+//兌獎紀錄
+.descriptBox.record {
+    .gbox-title {
+        background-image: url(./img/gbox-title-record.png);
+    }
+    .gbox-wrap {
+        padding: vw(40) 0 vw(40) 0;
+    }
+    .scrollOuter {
+        width: vw(719);
+        height: vw(617);
+        margin: 0 auto;
+
+        padding: vw(40) vw(10);
+    }
+    .recordTH {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: vw(20);
+        div {
+            background-color: #ff671c;
+            border-radius: 50px;
+
+            font-size: vw(35);
+            font-weight: bold;
+            color: #ffffff;
+
+            box-sizing: border-box;
+            padding: vw(10) 0;
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                width: vw(113);
+            }
+            &:nth-child(3) {
+                flex-grow: 1;
+            }
+            &:nth-child(2),
+            &:nth-child(3) {
+                margin-left: vw(25);
+            }
+        }
+    }
+    .recordTD {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        background-color: #cda037;
+        border-radius: 50px;
+
+        box-sizing: border-box;
+
+        margin-bottom: vw(5);
+
+        &.gray {
+            background-color: #cdbb92;
+        }
+        div {
+            font-size: vw(30);
+            border-radius: 50px;
+            color: #ffffff;
+            padding: vw(17) 0;
+
+            word-break: break-all;
+
+            text-align: center;
+            &:nth-child(1),
+            &:nth-child(2) {
+                width: vw(113);
+            }
+            &:nth-child(3) {
+                width: vw(415);
+
+                padding: vw(17) vw(10);
+            }
+            &:nth-child(2) {
+                margin-left: vw(25);
+            }
+        }
+    }
+    .recordContent {
+        height: vw(450);
+        overflow-y: auto;
+        margin-bottom: vw(35);
+    }
+
+    #pagination {
+        height: auto;
+        display: flex;
+
+        list-style: none;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 0;
+
+        align-items: baseline;
+        justify-content: center;
+
+        li {
+            display: flex;
+            box-sizing: border-box;
+            padding: 0 vw(10);
+            margin: 0;
+
+            align-items: baseline;
+            justify-content: center;
+
+            position: relative;
+            a {
+                font-size: vw(34);
+                font-weight: bold;
+
+                color: #ff671c;
+
+                text-decoration: none;
+            }
+        }
+
+        .page-item.active::after {
+            content: "—";
+            display: inline-block;
+            position: absolute;
+
+            color: #ff671c;
+            font-size: vw(34);
+
+            bottom: vw(-30);
+        }
+
+        .page-item.prev::after {
+            content: "第";
+            display: inline-block;
+            font-size: vw(34);
+            font-weight: bold;
+            padding-left: vw(15);
+            color: #ff671c;
+        }
+
+        .page-item.next::before {
+            content: "頁";
+            display: inline-block;
+            font-size: vw(34);
+            font-weight: bold;
+            padding-right: vw(15);
+            color: #ff671c;
+        }
+    }
+}
+
+//scrollbar
+
+@at-root .mCSB_scrollTools {
+    .mCSB_dragger {
+        width: vw(30);
+        height: vw(100);
+        border-radius: 0;
+        background-image: url(./img/gbox-scrollBtn.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        color: transparent;
+
+        margin: 0 auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @at-root .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+        background-color: transparent;
+    }
+
+    @at-root .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar,
+        .mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar {
+        background-color: transparent;
+    }
+
+    .mCSB_draggerRail {
+        width: vw(19);
+
+        background-color: transparent;
+        background-image: url(./img/gbox-scrollRail.png);
+
+        position: absolute;
+        margin: 0 auto;
+        left: 50%;
+        transform: translateX(-50%);
+        @include backContain();
+    }
+}
+
+@at-root .mCS-dark.mCSB_scrollTools .mCSB_draggerRail {
+    background-color: transparent;
+}
+
+//commonPopup-wrap
+.commonPopup-wrap {
+    display: flex;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    z-index: 999;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow-y: auto;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.commonPopup {
+    position: relative;
+    max-width: 100%;
+    width: vw(748);
+    height: auto;
+
+    box-sizing: border-box;
+    margin: vw(250) 0 vw(20) 0;
+    padding: vw(30) 0 0 0;
+
+    background-color: #fff1d0;
+    border: vw(5) solid #f8ffff;
+
+    border-radius: 45px;
+
+    animation: commonPopupActive 0.25s linear forwards;
+}
+
+@keyframes commonPopupActive {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.storeTitle {
+    padding: 0;
+    width: vw(357);
+    height: vw(91);
+
+    margin: 0 auto vw(140) auto;
+
+    @include backContain();
+    background-image: url(./img/gbox-title-store.png);
+}
+
+.storeContent {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
+
+    width: vw(751);
+    height: vw(900);
+
+    position: relative;
+    left: vw(-6);
+    @include backContain();
+    background-image: url(./img/gbox-bg-store.png);
+
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+    box-sizing: border-box;
+    padding: vw(13) vw(40) vw(13) vw(31);
+}
+
+.closeBtn {
+    position: absolute;
+    width: vw(85);
+    height: vw(85);
+
+    @include backContain();
+
+    padding: 0;
+    margin: 0;
+
+    top: vw(-100);
+    right: 0;
+
+    background-image: url(./img/gbox-close.png);
+}
+
+.refresh {
+    width: vw(69);
+    height: vw(69);
+    @include backContain();
+
+    background-image: url(./img/gbox-refresh-off.png);
+
+    position: absolute;
+    top: vw(-80);
+    right: vw(80);
+
+    pointer-events: none;
+    &.active {
+        pointer-events: visible;
+        background-image: url(./img/gbox-refresh-on.png);
+    }
+}
+
+.commonPopup-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    bottom: vw(60);
+    left: 50%;
+    transform: translateX(-50%);
+    .btn {
+        text-decoration: none;
+        display: flex;
+        width: vw(266);
+        height: vw(93);
+
+        margin: 0;
+        padding: 0;
+
+        justify-content: center;
+        align-items: center;
+
+        background-color: transparent;
+
+        @include backContain();
+
+        background-image: url(./img/gbox-Btn.png);
+        color: #0f4db3;
+        font-size: vw(45);
+        font-weight: bold;
+
+        &.buy {
+            background-image: url(./img/gbox-Btn-buyDescript.png);
+        }
+        &.record {
+            background-image: url(./img/gbox-Btn-buyRecord.png);
+            margin-left: vw(30);
+        }
+    }
+}
+
+// 兌換商店
+
+.tabContent {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: vw(-88);
+    left: vw(20);
+}
+
+.tabBtn {
+    width: vw(263);
+    height: vw(88);
+
+    background-color: #c8c8c8;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+    @include backContain();
+
+    &.basic {
+        background-size: vw(156) vw(36);
+        background-image: url(./img/gbox-tabBtn-basic.png);
+    }
+    &.random {
+        background-size: vw(156) vw(36);
+        background-image: url(./img/gbox-tabBtn-random.png);
+    }
+    &.active {
+        background-color: #ffa95c;
+
+        &.basic {
+            background-image: url(./img/gbox-tabBtn-basic-active.png);
+        }
+        &.random {
+            background-image: url(./img/gbox-tabBtn-random-active.png);
+        }
+    }
+}
+
+.storeItem {
+    position: relative;
+    width: vw(330);
+    height: vw(315);
+
+    margin-bottom: vw(12);
+}
+
+.itemTitle {
+    display: flex;
+    min-height: vw(88);
+    color: #ffffff;
+    font-size: vw(30);
+    font-weight: bold;
+    text-align: center;
+
+    box-sizing: border-box;
+    padding: vw(10) vw(45);
+
+    background-color: #6421de;
+
+    margin-bottom: vw(15);
+
+    word-break: break-all;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.itemPrice {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+    overflow: hidden;
+    div {
+        display: flex;
+        height: vw(60);
+        color: #ffffff;
+        font-size: vw(30);
+        font-weight: bold;
+
+        position: relative;
+
+        box-sizing: border-box;
+        padding-left: vw(65);
+        word-break: break-all;
+
+        align-items: center;
+        &.gold::before {
+            background-image: url(./img/infobar-coin-gold.png);
+        }
+        &.silver::before {
+            background-image: url(./img/infobar-coin-silver.png);
+        }
+        &::before {
+            width: vw(64);
+            height: 100%;
+            left: 0;
+            top: 0;
+            position: absolute;
+            display: inline-block;
+            content: "";
+
+            @include backContain();
+        }
+    }
+}
+
+.itemPic {
+    width: vw(210);
+    height: vw(140);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    overflow: hidden;
+    &::before {
+        content: "";
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background-image: url(https://tw.hicdn.beanfun.com/beanfun/beanfun/common_assets/images/loading/type1.gif);
+        @include backContain();
+        background-size: vw(50) vw(50);
+        z-index: 0;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+        position: relative;
+        transform: scale(1.2);
+        z-index: 1;
+    }
+
+    .sign {
+        width: vw(200);
+        height: vw(102);
+        background-image: url(./img/gbox-sign-soldout.png);
+        @include backContain();
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        z-index: 2;
+    }
+}
+
+.buyBtn {
+    width: vw(116);
+    height: vw(91);
+    @include backContain();
+    background-image: url(./img/gbox-buyBtn-gray.png);
+
+    position: absolute;
+    right: vw(5);
+    bottom: vw(40);
+    pointer-events: none;
+    &.active {
+        pointer-events: visible;
+        background-image: url(./img/gbox-buyBtn-red.png);
+    }
+}
