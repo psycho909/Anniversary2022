@@ -1,0 +1,46 @@
+.front {
+	width: 100%;
+	background-image: url("./img/front/bg.jpg");
+	background-position: center 0;
+	background-size: 1920px 870px;
+	background-repeat: no-repeat;
+	&-container {
+		width: 1200px;
+		margin: 0 auto;
+		position: relative;
+		@include media {
+			width: 100%;
+		}
+	}
+	&-head {
+		width: 100%;
+		height: 849px;
+		background-size: cover;
+		background-image: url("./img/front/header.jpg");
+		background-position: center 0;
+		&Slogan {
+			width: 1522px;
+			height: 800px;
+			background-size: cover;
+			background-image: url("./img/front/ptn.png");
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		&Anim1 {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		&Anim2 {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	&-content {
+	}
+	&-bottom {
+		background-color: #4b453e;
+	}
+}

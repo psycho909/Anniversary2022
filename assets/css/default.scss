@@ -1,6 +1,14 @@
 @charset "UTF-8";
 @import "./_normalize.scss";
 @import "./_mixins.scss";
+@import "./_lightbox.scss";
+@import "./_login.scss";
+@import "./_front.scss";
+@import "./_navbar.scss";
+@import "./_gamedata.scss";
+@import "./_lottery.scss";
+@import "./_footer.scss";
+@import "./_top.scss";
 @import "./inner.css";
 $color: #000;
 $title: #fff;
@@ -12,13 +20,9 @@ Value
 Base  
 =============================================*/
 body {
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-
-body {
-    background: #000;
-    font-family: "PingFangTC-Regular", "Heiti TC", "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 0;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	font-family: "PingFangTC-Regular", "Heiti TC", "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
