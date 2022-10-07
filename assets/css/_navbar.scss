@@ -3,6 +3,15 @@
 	display: flex;
 	align-items: stretch;
 	padding-left: 42px;
+	@include media {
+		// display: none;
+		flex-wrap: wrap;
+		padding-left: vw(46);
+		padding-right: vw(46);
+		padding-top: vw(20);
+		padding-bottom: vw(20);
+		align-items: center;
+	}
 	&-home {
 		width: 121px;
 		height: 63px;
@@ -11,10 +20,49 @@
 		display: inline-block;
 		margin-right: 48px;
 		align-self: center;
+		@include media {
+			width: vw(116);
+			height: vw(60);
+			margin-right: auto;
+		}
+	}
+	&-hamburger {
+		display: none;
+		@include media {
+			display: block;
+			width: vw(51);
+			height: vw(44);
+			background-size: 100%;
+			background-image: url("./img/navbar/btn-hamburger.png");
+		}
+	}
+	&-box {
+		width: 100%;
+		display: flex;
+		@include media {
+			background-color: #625c55;
+			position: absolute;
+			top: vw(100);
+			left: 0;
+			z-index: 9;
+			flex-direction: column;
+			height: 100vh;
+			display: none;
+			&.on {
+				display: block;
+			}
+		}
 	}
 	&-list {
 		font-size: 0;
 		margin-right: auto;
+		@include media {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			order: 2;
+		}
 	}
 	&-nav {
 		color: #fff;
@@ -24,6 +72,11 @@
 		padding: 32px 0;
 		box-sizing: border-box;
 		display: inline-block;
+		@include media {
+			margin-right: 0;
+			font-size: vw(36);
+			padding: vw(38) 0;
+		}
 		&:last-child {
 			margin-right: 0;
 		}
@@ -34,11 +87,23 @@
 		align-items: center;
 		border-left: 1px solid #8b8682;
 		box-sizing: border-box;
+		@include media {
+			order: 1;
+			border-left: 0;
+			padding: 0;
+			margin-top: vw(48);
+		}
 		&Btn {
 			width: 179px;
 			height: 59px;
 			background-size: cover;
 			background-image: url("./img/navbar/btn-login-off.png");
+			@include media {
+				width: vw(238);
+				height: vw(109);
+				background-image: url("./img/navbar/m-btn-login-off.png");
+				margin: 0 auto;
+			}
 		}
 	}
 	&-logout {
@@ -47,6 +112,8 @@
 			height: 59px;
 			background-size: cover;
 			background-image: url("./img/navbar/btn-logout-off.png");
+			@include media {
+			}
 		}
 	}
 }

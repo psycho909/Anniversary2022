@@ -22,7 +22,7 @@ const indexStore = new Vuex.Store({
 	mutations: {}
 });
 
-Message();
+// Message();
 
 const vm = new Vue({
 	el: "#app",
@@ -30,6 +30,8 @@ const vm = new Vue({
 	components: {
 		navbar,
 		front,
+		lottery,
+		gamedata,
 		top,
 		footerbar
 	},

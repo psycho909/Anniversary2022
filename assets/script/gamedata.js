@@ -1,9 +1,7 @@
-export default Vue.component("game-data", {
-	props: [],
-	data() {
-		return {};
-	},
+const gamedata = {
 	template: `
-        <div class="gameData"></div>
-    `
-});
+		<div class="gamedata"></div>
+	`
+};
+
+export default gamedata;

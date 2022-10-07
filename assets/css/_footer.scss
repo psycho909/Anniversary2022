@@ -8,4 +8,8 @@
 	align-items: center;
 	background-color: #2d2d2d;
 	color: #fff;
+	@include media {
+		height: vw(130);
+		font-size: vw(26);
+	}
 }

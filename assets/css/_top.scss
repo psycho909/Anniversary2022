@@ -6,4 +6,8 @@
 	right: 0;
 	background-size: cover;
 	background-image: url("./img/common/btn-top.png");
+	@include media {
+		width: vw(134);
+		height: vw(134);
+	}
 }
