@@ -2,7 +2,7 @@
 	background-color: #2d2d2d;
 	display: flex;
 	align-items: stretch;
-	padding-left: 42px;
+	padding-left: 32px;
 	@include media {
 		// display: none;
 		flex-wrap: wrap;
@@ -18,8 +18,9 @@
 		background-size: cover;
 		background-image: url("./img/navbar/slogan.png");
 		display: inline-block;
-		margin-right: 48px;
+		margin-right: 18px;
 		align-self: center;
+		flex-shrink: 0;
 		@include media {
 			width: vw(116);
 			height: vw(60);
@@ -68,21 +69,24 @@
 		color: #fff;
 		text-decoration: none;
 		font-size: 24px;
-		margin-right: 54px;
-		padding: 32px 0;
+		padding: 32px 12px;
 		box-sizing: border-box;
 		display: inline-block;
+		@include hover {
+			background-color: #ff9d00;
+			color: #2d2d2d;
+		}
 		@include media {
 			margin-right: 0;
 			font-size: vw(36);
-			padding: vw(38) 0;
+			padding: vw(38);
 		}
 		&:last-child {
 			margin-right: 0;
 		}
 	}
 	&-login {
-		padding: 0 90px;
+		padding: 0 37px;
 		display: flex;
 		align-items: center;
 		border-left: 1px solid #8b8682;
@@ -94,25 +98,45 @@
 			margin-top: vw(48);
 		}
 		&Btn {
-			width: 179px;
+			width: 180px;
 			height: 59px;
-			background-size: cover;
-			background-image: url("./img/navbar/btn-login-off.png");
+			background-size: 200%;
+			background-image: url("./img/navbar/btn-login.png");
+			@include hover {
+				background-position-x: 100%;
+			}
 			@include media {
-				width: vw(238);
-				height: vw(109);
-				background-image: url("./img/navbar/m-btn-login-off.png");
+				width: vw(243);
+				height: vw(116);
+				background-image: url("./img/navbar/m-btn-login.png");
 				margin: 0 auto;
+			}
+		}
+		&Info {
+			display: flex;
+			align-items: center;
+			span {
+				color: #fff;
+				font-size: 20px;
+				margin-right: 18px;
+				@include media {
+					font-size: vw(20);
+				}
 			}
 		}
 	}
 	&-logout {
 		&Btn {
 			width: 89px;
-			height: 59px;
-			background-size: cover;
-			background-image: url("./img/navbar/btn-logout-off.png");
+			height: 58px;
+			background-size: 200%;
+			background-image: url("./img/navbar/btn-logout.png");
+			@include hover {
+				background-position-x: 100%;
+			}
 			@include media {
+				width: vw(154);
+				height: vw(100);
 			}
 		}
 	}

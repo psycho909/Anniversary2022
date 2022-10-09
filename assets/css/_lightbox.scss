@@ -6,10 +6,13 @@
 		border-radius: 20px;
 		border: 2px solid #7e7770;
 		box-sizing: border-box;
-		padding: 94px 20px 20px 20px;
+		padding: 94px 0 40px;
 		@include media {
 			max-width: vw(600);
 			background-image: linear-gradient(to bottom, #ffa300 vw(40), #7e7770 vw(41), #7e7770 vw(42), #e7e4dd vw(43), #e7e4dd 100%);
+			padding: vw(94) 0 vw(40);
+			border-width: vw(2);
+			border-radius: vw(20);
 		}
 		&:before {
 			content: "";
@@ -43,74 +46,312 @@
 			right: vw(-66);
 		}
 	}
+	.gbox-action {
+		font-size: 0;
+	}
+	.gbox-content {
+		padding: 0 20px;
+		font-size: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include media {
+			font-size: vw(20);
+			padding: 0 vw(20);
+		}
+	}
 	.gbox-btn {
-		width: 203px;
-		height: 66px;
 		background-size: 100%;
 		font-size: 0;
 		background-color: transparent;
 		box-sizing: border-box;
 		padding: 0;
 		margin: 0;
-		.lb-btn-confirm {
-			background-image: url("./img/lightbox/lb-btn-confirm.png");
+		&.lb-btn-confirm {
+			width: 203px;
+			height: 66px;
+			background-image: url("./img/common/btn-confirm.png");
+			background-size: 200%;
+			@include hover {
+				background-position-x: 100%;
+			}
+			@include media {
+				width: vw(203);
+				height: vw(66);
+			}
 		}
 	}
 	.gbox-content {
 		font-size: 20px;
-		color: #4f4f4f;
+		color: #2d2d2d;
+		padding-bottom: 34px;
 		@include media {
 			font-size: vw(20);
+			padding-bottom: vw(34);
 		}
 	}
 	.lb-title {
 		font-weight: bold;
 		font-size: 40px;
 		color: #2d2d2d;
+		margin-bottom: 42px;
+		@include media {
+			margin-bottom: vw(42);
+			font-size: vw(40);
+		}
+	}
+	.lb-text {
+		font-size: 20px;
+		color: #2d2d2d;
 		@include media {
 			font-size: vw(40);
+		}
+	}
+	.lb-rule {
+		font-size: 20px;
+		color: #000;
+		display: block;
+		font-weight: bold;
+		margin-top: 50px;
+		@include media {
+			margin-top: vw(50);
+		}
+	}
+	.lb-list {
+		line-height: 1.5;
+		font-size: 20px;
+		text-align: left;
+		margin-bottom: 0;
+		@include media {
+			font-size: vw(20);
+		}
+		&Li {
+			margin-bottom: 36px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			@include media {
+				margin-bottom: vw(36);
+			}
 		}
 	}
 }
 
 .lb-lottery {
-	&-historyReward {
-		width: 140px;
-		height: 140px;
-		background-size: 100%;
-		background-image: url("./img/lightbox/history-reward-bg.png");
+	.gbox-wrap {
+		max-width: 778px;
 		@include media {
-			width: vw(140);
-			height: vw(140);
+			max-width: vw(612);
+		}
+	}
+	.gbox-content {
+		padding: 0 90px;
+		@include media {
+			padding: 0 vw(40);
+		}
+	}
+	&-notice {
+		text-align: left;
+		font-size: 24px;
+		color: #2d2d2d;
+		@include media {
+			font-size: vw(24);
 		}
 	}
 	&-reward {
-		width: 245px;
-		height: 245px;
-		background-size: 100%;
-		background-image: url("./img/lightbox/reward-bg.png");
-		@include media {
-			width: vw(245);
-			height: vw(245);
+		&List {
+			margin-bottom: 36px;
+			@include media {
+				margin-bottom: vw(36);
+			}
+		}
+		&Box {
+			display: flex;
+			padding-bottom: 30px;
+			border-bottom: 1px solid #8e8982;
+			margin-bottom: 30px;
+			&:last-child {
+				border-bottom: 0;
+				margin-bottom: 0;
+			}
+			@include media {
+				padding-bottom: vw(30);
+				margin-bottom: vw(30);
+			}
+		}
+		&Item {
+			width: 140px;
+			height: 140px;
+			background-size: 100%;
+			background-image: url("./img/lightbox/reward-bg-s.png");
+			margin-right: 15px;
+			position: relative;
+			flex-shrink: 0;
+			@include media {
+				width: vw(140);
+				height: vw(140);
+				margin-right: vw(15);
+			}
+			span {
+				width: 100px;
+				height: 100px;
+				background-color: #f5f5f7;
+				border: 1px solid #000;
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				@include media {
+					width: vw(100);
+					height: vw(100);
+					top: vw(15);
+					left: vw(15);
+				}
+				img {
+					height: 100%;
+				}
+			}
+		}
+		&Info {
+			display: flex;
+			flex-direction: column;
+			text-align: left;
+			align-items: flex-start;
+			&Label {
+				font-size: 24px;
+				color: #fff;
+				background-color: #000;
+				border-radius: 14px;
+				padding: 4px 22px;
+				margin-bottom: 6px;
+			}
+			&Name {
+				font-size: 24px;
+				color: #000;
+				margin-bottom: 19px;
+			}
+			&Date {
+				font-size: 20px;
+				color: #4b453e;
+			}
+		}
+	}
+	&-Item {
+		&Img {
+			width: 245px;
+			height: 245px;
+			background-size: 100%;
+			background-image: url("./img/lightbox/reward-bg.png");
+			margin-bottom: 50px;
+			position: relative;
+			@include media {
+				width: vw(245);
+				height: vw(245);
+				margin-bottom: vw(50);
+			}
+			span {
+				width: 176px;
+				height: 176px;
+				background-color: #f5f5f7;
+				border: 1px solid #000;
+				position: absolute;
+				top: 27px;
+				left: 27px;
+				@include media {
+					width: vw(176);
+					height: vw(176);
+					top: vw(27);
+					height: vw(27);
+				}
+				img {
+					height: 100%;
+				}
+			}
+		}
+		&Name {
+			font-size: 20px;
+			color: #2d2d2d;
+			@include media {
+				font-size: vw(24);
+			}
 		}
 	}
 	&-task {
-		width: 48px;
-		height: 47px;
-		background-size: 100%;
-		background-image: url("./img/lightbox/icon-task.png");
-		@include media {
-			width: vw(48);
-			height: vw(47);
+		&Text {
+			&Box {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-bottom: 52px;
+				@include media {
+					margin-bottom: vw(52);
+				}
+			}
+			display: flex;
+			align-items: center;
+			span {
+				color: #fba400;
+			}
 		}
-		&.complete {
-			width: 59px;
-			height: 36px;
-			background-size: 100%;
-			background-image: url("./img/lightbox/icon-complete.png");
+		&List {
+		}
+		&Box {
+			display: flex;
+			margin-bottom: 16px;
+			&:last-child {
+				margin-bottom: 0;
+			}
 			@include media {
-				width: vw(59);
-				height: vw(36);
+				margin-bottom: vw(16);
+			}
+		}
+		&Icon {
+			flex-shrink: 0;
+			width: 48px;
+			height: 47px;
+			background-size: 100%;
+			background-image: url("./img/lightbox/icon-task.png");
+			margin-right: 16px;
+			position: relative;
+			@include media {
+				width: vw(48);
+				height: vw(47);
+				margin-right: vw(16);
+			}
+			&.complete {
+				&:before {
+					content: "";
+					width: 59px;
+					height: 36px;
+					background-size: 100%;
+					background-image: url("./img/lightbox/icon-complete.png");
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					@include media {
+						width: vw(59);
+						height: vw(36);
+					}
+				}
+			}
+		}
+		&Info {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		&Name {
+			font-size: 20px;
+			color: #3c3936;
+			@include media {
+				font-size: vw(20);
+			}
+		}
+		&Date {
+			font-size: 16px;
+			color: red;
+			@include media {
+				font-size: vw(16);
 			}
 		}
 	}

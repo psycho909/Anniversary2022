@@ -1,14 +1,12 @@
-// export default Vue.component("nav-bar", {
-// 	props: [],
-// 	data() {
-// 		return {};
-// 	},
-// 	template: `
-//         <div class="navBar"></div>
-//     `
-// });
-
 const navbar = {
+	props: {
+		login: {
+			default: false
+		},
+		username: {
+			default: ""
+		}
+	},
 	template: `
         <div class="navbar">
             <a href="javascript:;" class="navbar-home"></a>
@@ -22,7 +20,12 @@ const navbar = {
                     <a href="javascript:;" class="navbar-nav">小喵機密X檔案</a>
                 </div>
                 <div class="navbar-login">
-                    <a href="javascript:;" class="navbar-loginBtn"></a>
+                    <a href="javascript:;" class="navbar-loginBtn" v-if="!login"></a>
+                    <div class="navbar-loginInfo" v-else>
+                        <span>{{username}}</span>
+                        <a href="javascript:;" class="navbar-logoutBtn"></a>
+                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -1,8 +1,12 @@
 const top = {
-	mounted() {
-		console.log("TOP");
+	methods: {
+		toTop() {
+			$("body,html").animate({
+				scrollTop: 0
+			});
+		}
 	},
-	template: `<a href="javascript:;" class="top"></a>`
+	template: `<a href="javascript:;" class="top" @click="toTop"></a>`
 };
 
 export default top;

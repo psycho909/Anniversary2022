@@ -1,8 +1,21 @@
+@keyframes star {
+	from,
+	50%,
+	to {
+		opacity: 1;
+	}
+
+	25%,
+	75% {
+		opacity: 0;
+	}
+}
 .lottery {
 	width: 100%;
 	background-image: url("./img/lottery/bg.jpg");
 	background-position: center 0;
 	background-size: 1920px 870px;
+	position: relative;
 	@include media {
 		background-size: vw(768) vw(1408);
 		background-image: url("./img/lottery/m-bg.jpg");
@@ -15,9 +28,76 @@
 		background-size: 1920px 576px;
 		background-image: url("./img/lottery/header.jpg");
 		background-position: center 0;
+		overflow: hidden;
 		@include media {
 			height: vw(576);
 			background-size: vw(1920) vw(576);
+		}
+		&Anim1 {
+			width: 38px;
+			height: 47px;
+			background-image: url("./img/lottery/anim1.png");
+			background-size: 100%;
+			position: absolute;
+			top: 409px;
+			left: 400px;
+			animation: star 1s alternate infinite;
+			@include media {
+				width: vw(38);
+				height: vw(47);
+				top: vw(409);
+				left: vw(185);
+			}
+		}
+		&Anim2 {
+			width: 20px;
+			height: 30px;
+			background-image: url("./img/lottery/anim2.png");
+			background-size: 100%;
+			position: absolute;
+			top: 351px;
+			left: 511px;
+			animation: star 1.6s alternate infinite;
+			animation-delay: 0.3s;
+			@include media {
+				width: vw(20);
+				height: vw(30);
+				top: vw(351);
+				left: vw(296);
+			}
+		}
+		&Anim3 {
+			width: 36px;
+			height: 45px;
+			background-image: url("./img/lottery/anim3.png");
+			background-size: 100%;
+			position: absolute;
+			top: 348px;
+			left: 709px;
+			animation: star 1.4s alternate infinite;
+			@include media {
+				width: vw(36);
+				height: vw(45);
+				top: vw(348);
+				left: vw(494);
+			}
+		}
+		&Anim4 {
+			width: 22px;
+			height: 33px;
+			background-image: url("./img/lottery/anim4.png");
+			background-size: 100%;
+			position: absolute;
+			top: 437px;
+			left: 781px;
+			animation: star 1s alternate infinite;
+			animation-delay: 0.1s;
+			@include media {
+				width: vw(22);
+				height: vw(33);
+				top: vw(437);
+				left: vw(566);
+			}
 		}
 	}
 	&-container {
@@ -59,15 +139,18 @@
 	}
 	&-loginBtn {
 		margin-bottom: 50px;
-		width: 245px;
-		height: 115px;
+		width: 246px;
+		height: 116px;
 		font-size: 0;
 		display: block;
-		background-size: 100%;
+		background-size: 200%;
 		background-image: url("./img/lottery/btn-login.png");
+		@include hover {
+			background-position-x: 100%;
+		}
 		@include media {
-			width: vw(245);
-			height: vw(115);
+			width: vw(246);
+			height: vw(116);
 			margin-bottom: vw(50);
 		}
 	}
@@ -161,41 +244,50 @@
 			justify-content: center;
 		}
 		&Lottery {
-			width: 436px;
-			height: 66px;
-			background-size: 100%;
+			width: 437px;
+			height: 75px;
+			background-size: 200%;
 			background-image: url("./img/lottery/btn-lottery.png");
 			display: block;
 			font-size: 0;
 			margin-bottom: 30px;
+			@include hover {
+				background-position-x: 100%;
+			}
 			@include media {
-				width: vw(436);
-				height: vw(66);
+				width: vw(437);
+				height: vw(75);
 				margin-bottom: vw(30);
 			}
 		}
 		&Task {
-			width: 200px;
+			width: 201px;
 			height: 66px;
-			background-size: 100%;
+			background-size: 200%;
 			background-image: url("./img/lottery/btn-task.png");
 			display: block;
 			font-size: 0;
 			margin-right: 30px;
+			@include hover {
+				background-position-x: 100%;
+			}
 			@include media {
-				width: vw(200);
+				width: vw(201);
 				height: vw(66);
 			}
 		}
 		&History {
-			width: 200px;
+			width: 201px;
 			height: 66px;
-			background-size: 100%;
+			background-size: 200%;
 			background-image: url("./img/lottery/btn-history.png");
 			display: block;
 			font-size: 0;
+			@include hover {
+				background-position-x: 100%;
+			}
 			@include media {
-				width: vw(200);
+				width: vw(201);
 				height: vw(66);
 			}
 		}
@@ -205,12 +297,18 @@
 		flex-direction: column;
 		align-items: center;
 		&Group {
-			display: flex;
+			// display: flex;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-row-gap: 30px;
+			justify-items: center;
 			margin-top: 50px;
+			width: 100%;
 			@include media {
 				width: 100%;
 				margin-top: vw(30);
-				flex-direction: column;
+				grid-template-columns: repeat(1, 1fr);
+				grid-row-gap: 0;
 			}
 			.lottery-rewardBox-name {
 				width: 200px;
@@ -220,10 +318,10 @@
 				}
 			}
 			.lottery-rewardBox {
-				margin-right: 78px;
-				&:last-child {
-					margin-right: 0;
-				}
+				// margin-right: 78px;
+				// &:last-child {
+				// 	margin-right: 0;
+				// }
 				@include media {
 					margin-right: 0;
 					margin-bottom: vw(30);

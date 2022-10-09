@@ -5,7 +5,12 @@ import login from "./login.js";
 import navbar from "./navbar.js";
 import gamedata from "./gamedata.js";
 import lottery from "./lottery.js";
-import { Message } from "./lightbox.js";
+import lotteryLoading from "./lotteryLoading.js";
+import loading from "./loading.js";
+import { Message, LoginNotice, Congrats, UnLucky, RewardListEmpty, RewardList, RewardTask } from "./lightbox.js";
+
+Vue.component("loading", loading);
+Vue.component("lottery-loading", lotteryLoading);
 
 // loadingProgress控制
 function loadingHide() {
@@ -22,7 +27,13 @@ const indexStore = new Vuex.Store({
 	mutations: {}
 });
 
-// Message();
+// LoginNotice();
+// Message("共用樣式");
+// Congrats();
+// UnLucky();
+// RewardListEmpty();
+// RewardList();
+// RewardTask();
 
 const vm = new Vue({
 	el: "#app",
@@ -31,6 +42,7 @@ const vm = new Vue({
 		navbar,
 		front,
 		lottery,
+		login,
 		gamedata,
 		top,
 		footerbar

@@ -4,8 +4,13 @@ const front = {
 			<div class="front-head">
 				<div class="front-container">
 					<div class="front-headSlogan"></div>
-					<div class="front-headAnim1"></div>
-					<div class="front-headAnim2"></div>
+					<div class="front-headKv"></div>
+					<div class="front-headAnim1">
+						<span></span>
+					</div>
+					<div class="front-headAnim2">
+						<span></span>
+					</div>
 					<a href="javascript:;" class="front-loginBtn">立即探索</a>
 				</div>
 			</div>
@@ -20,7 +25,7 @@ const front = {
 							<span>也有人說那些小喵是探員自行製造的</span>
 							<span>到底怎麼回事？要不就前往機密實驗室吧!</span>
 						</div>
-						<a href="javascript:;" class="front-contentBox-btn"></a>
+						<a href="javascript:;" class="front-contentBox-btn">前往偵查</a>
 					</div>
 				</div>
 				<div class="front-contentBox" data-box="2">
@@ -30,6 +35,7 @@ const front = {
 							<span>為探員們量身打造的機密數據庫</span>
 							<span>點進來一探究竟吧～</span>
 						</div>
+						<a href="javascript:;" class="front-contentBox-btn">開啟機密庫</a>
 					</div>
 				</div>
 				<div class="front-contentBox" data-box="3">
@@ -39,6 +45,7 @@ const front = {
 							<span>聽說各界重要情報及知名探員都會出現在此名單</span>
 							<span>你，有出現在這嗎？快點進查看！</span>
 						</div>
+						<a href="javascript:;" class="front-contentBox-btn">入館查看</a>
 					</div>
 				</div>
 				<div class="front-contentBox" data-box="4">
@@ -50,6 +57,7 @@ const front = {
 							<span>探員即有機會拿走高額限量獎品</span>
 							<span>你準備好接受委託任務了嗎？</span>
 						</div>
+						<a href="javascript:;" class="front-contentBox-btn">即刻報到</a>
 					</div>
 				</div>
 				<div class="front-contentBox" data-box="bn">
