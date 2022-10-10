@@ -1,12 +1,17 @@
 @keyframes moveUp {
-	from,
-	50%,
-	to {
+	0% {
+		bottom: 0%;
+	}
+	25% {
+		bottom: 0%;
+	}
+	50% {
 		bottom: 6%;
 	}
-
-	25%,
 	75% {
+		bottom: 0%;
+	}
+	100% {
 		bottom: 0%;
 	}
 }
@@ -197,10 +202,13 @@
 			position: relative;
 			border-radius: 50%;
 			margin: 0 auto 46px;
+			box-shadow: inset 0 0 0 5px #ff9600;
+			background-color: #000;
 			@include media {
 				width: vw(174);
 				height: vw(174);
 				margin: 0 auto vw(46);
+				box-shadow: inset 0 0 0 vw(5) #ff9600;
 			}
 			&:before {
 				content: "";

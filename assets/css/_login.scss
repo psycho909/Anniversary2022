@@ -130,10 +130,13 @@
 			position: relative;
 			border-radius: 50%;
 			margin: 0 auto 19px;
+			box-shadow: inset 0 0 0 5px #ff9600;
+			background-color: #000;
 			@include media {
 				width: vw(146);
 				height: vw(146);
 				margin: 0 auto vw(19);
+				box-shadow: inset 0 0 0 vw(5) #ff9600;
 			}
 			&:before {
 				content: "";

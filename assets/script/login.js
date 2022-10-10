@@ -2,13 +2,19 @@ const login = {
 	props: [],
 	mounted() {
 		$(".login-selectGameControl").niceSelect();
+		var _this = this;
+		Vue.nextTick(() => {
+			$("body").on("click", ".nice-select .list li", function () {
+				_this.selectGame = $(this).attr("data-value");
+			});
+		});
 		$(".login-selectServerControl").niceSelect();
 	},
 	data() {
 		return {
 			gameOption: [
-				{ value: 1, text: "天堂M" },
-				{ value: 2, text: "新楓之谷" }
+				{ value: "LM", text: "天堂M" },
+				{ value: "Maple", text: "新楓之谷" }
 			],
 			serverOption: [
 				{ value: 1, text: "天堂M" },
@@ -69,7 +75,7 @@ const login = {
 			<div class="login-contentBox" style="--w:847;--mw:645" v-if="step == 1">
 				<div class="login-contentTitle">請選擇欲參加活動的遊戲_</div>
 				<div class="login-selectGameGroup">
-					<div class="login-selectGame" data-game="LM"></div>
+					<div class="login-selectGame" :data-game="selectGame"></div>
 					<select class="login-selectGameControl">
 						<option value="-1">請選擇</option>
 						<option v-for="game in gameOption" :value="game.value">{{game.text}}</option>

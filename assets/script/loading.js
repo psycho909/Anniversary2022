@@ -1,6 +1,11 @@
 const loading = {
 	props: ["type", "progress"],
 	mounted() {
+		if (!this.progress) {
+			this.show = false;
+			return;
+		}
+		this.show = true;
 		var canvas = this.$refs.canvasRef;
 		this.ctx = canvas.getContext("2d");
 		canvas.width = 995;
@@ -41,7 +46,7 @@ const loading = {
 			ctx: null,
 			timer: null,
 			currentProgress: 0,
-			show: true
+			show: false
 		};
 	},
 	methods: {

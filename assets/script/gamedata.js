@@ -1,14 +1,21 @@
-import Swiper from "./swiper-bundle.esm.browser.min.js";
 const gamedata = {
 	props: ["content"],
 	data() {
 		return {
 			swiper: null,
-			progress: 0
+			progress: 0,
+			selected: -1
 		};
 	},
 	mounted() {
+		var _this = this;
 		$(".gamedata-selectControl").niceSelect();
+		Vue.nextTick(() => {
+			$("body").on("click", ".nice-select .list li", function () {
+				_this.selected = $(this).attr("data-value");
+			});
+		});
+
 		this.swiper = new Swiper(".gamedata-swiper", {
 			slidesPerView: 1,
 			loop: true,
@@ -19,17 +26,6 @@ const gamedata = {
 			}
 		});
 		var _this = this;
-		$.ajax({
-			url: "https://reqres.in/api/users?delay=3",
-			type: "POST",
-			data: {
-				name: "paul rudd",
-				movies: ["I Love You Man", "Role Models"]
-			},
-			success: function (response) {
-				// _this.progress = 100;
-			}
-		});
 	},
 	template: `
 		<div class="gamedata">
@@ -49,10 +45,11 @@ const gamedata = {
 			</div>
 			<div class="gamedata-container">
 				<div class="gamedata-selectGroup">
-					<div class="gamedata-selectGame" data-game="LM"></div>
+					<div class="gamedata-selectGame" :data-game="selected"></div>
 					<select class="gamedata-selectControl">
 						<option value="-1">請選擇</option>
-						<option value="1">天堂M</option>
+						<option value="LM">天堂M</option>
+						<option value="Maple">新楓之谷</option>
 					</select>
 				</div>
 				<div class="gamedata-dataTypeGroup">
