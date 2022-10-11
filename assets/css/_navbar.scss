@@ -97,21 +97,6 @@
 			padding: 0;
 			margin-top: vw(48);
 		}
-		&Btn {
-			width: 180px;
-			height: 59px;
-			background-size: 200%;
-			background-image: url("./img/navbar/btn-login.png");
-			@include hover {
-				background-position-x: 100%;
-			}
-			@include media {
-				width: vw(243);
-				height: vw(116);
-				background-image: url("./img/navbar/m-btn-login.png");
-				margin: 0 auto;
-			}
-		}
 		&Info {
 			display: flex;
 			align-items: center;
@@ -125,19 +110,47 @@
 			}
 		}
 	}
-	&-logout {
-		&Btn {
-			width: 89px;
-			height: 58px;
-			background-size: 200%;
-			background-image: url("./img/navbar/btn-logout.png");
-			@include hover {
-				background-position-x: 100%;
-			}
-			@include media {
-				width: vw(154);
-				height: vw(100);
-			}
+	&-btnLogin {
+		width: 180px;
+		height: 59px;
+		background-size: 200%;
+		background-image: url("./img/navbar/btn-login.png");
+		@include hover {
+			background-position-x: 100%;
+		}
+		@include media {
+			width: vw(243);
+			height: vw(116);
+			background-image: url("./img/navbar/m-btn-login.png");
+			margin: 0 auto;
+		}
+	}
+	&-btnLogout {
+		width: 89px;
+		height: 58px;
+		background-size: 200%;
+		background-image: url("./img/navbar/btn-logout.png");
+		@include hover {
+			background-position-x: 100%;
+		}
+		@include media {
+			width: vw(154);
+			height: vw(100);
+		}
+	}
+	&-btnEventNotice {
+		width: 180px;
+		height: 59px;
+		background-size: 200%;
+		background-image: url("./img/navbar/btn-eventNotice.png");
+		@include hover {
+			background-position-x: 100%;
+		}
+		@include media {
+			width: vw(243);
+			height: vw(116);
+			background-image: url("./img/navbar/m-btn-eventNotice.png");
+			margin: 0 auto;
 		}
 	}
 }

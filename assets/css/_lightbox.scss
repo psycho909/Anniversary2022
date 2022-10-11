@@ -70,7 +70,20 @@
 		&.lb-btn-confirm {
 			width: 203px;
 			height: 66px;
-			background-image: url("./img/common/btn-confirm.png");
+			background-image: url("./img/lightbox/btn-confirm.png");
+			background-size: 200%;
+			@include hover {
+				background-position-x: 100%;
+			}
+			@include media {
+				width: vw(203);
+				height: vw(66);
+			}
+		}
+		&.lb-btn-calendar {
+			width: 203px;
+			height: 66px;
+			background-image: url("./img/lightbox/btn-calendar.png");
 			background-size: 200%;
 			@include hover {
 				background-position-x: 100%;

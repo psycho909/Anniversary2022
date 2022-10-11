@@ -28,6 +28,16 @@
 		flex-direction: column;
 		align-items: center;
 		margin-bottom: 55px;
+		&[data-step="2"] {
+			.login-selectGameControl {
+				display: none;
+			}
+		}
+		&[data-step="3"] {
+			.login-selectGameControl {
+				display: none;
+			}
+		}
 		@include media {
 			max-width: calc(var(--mw) / 768 * 100vw);
 			background-image: linear-gradient(to bottom, #ffa300 vw(40), #7e7770 vw(41), #7e7770 vw(42), #e7e4dd vw(43), #e7e4dd 100%);
@@ -305,8 +315,9 @@
 		transition: all 0.3s;
 		@include hover {
 			filter: drop-shadow(0 0 8px rgba(#fffb00, 1));
+			// filter: drop-shadow(0 0 6px rgba(#ffc23b, 1)) drop-shadow(0 0 8px rgba(#ffe2a4, 1));
 			@include media {
-				filter: drop-shadow(0 0 vw(8) rgba(#fffb00, 1));
+				filter: drop-shadow(0 0 vw(8) rgba(#ffae00, 1));
 			}
 		}
 		&Group {
