@@ -28,7 +28,9 @@ const indexStore = new Vuex.Store({
 });
 
 // LoginNotice();
-// Message("共用樣式");
+
+// var textHTML = `<div>共用樣式<div><div>共用樣式<div><div>共用樣式<div><div>共用樣式<div>`;
+// Message(textHTML);
 // Congrats();
 // UnLucky();
 // RewardListEmpty();

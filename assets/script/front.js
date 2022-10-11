@@ -11,8 +11,8 @@ const front = {
 					<div class="front-headAnim2">
 						<span></span>
 					</div>
-					<a href="javascript:;" class="front-loginBtn">立即探索</a>
 				</div>
+				<a href="javascript:;" class="front-loginBtn">立即探索</a>
 			</div>
 			<a href="javascript:;" class="front-scrollDown">SCROLL SOWN</a>
 			<div class="front-content">
@@ -61,8 +61,12 @@ const front = {
 					</div>
 				</div>
 				<div class="front-contentBox" data-box="bn">
-					<div class="front-contentBox-bn" style="--w:596;--mw:685;"></div>
-					<div class="front-contentBox-bn" style="--w:596;--mw:685;"></div>
+					<div class="front-contentBox-bn" style="--w:596;--mw:685;">
+						<img src="./assets/css/img/front/item1.jpg" alt="" />
+					</div>
+					<div class="front-contentBox-bn" style="--w:596;--mw:685;">
+						<img src="./assets/css/img/front/item1.jpg" alt="" />
+					</div>
 				</div>
 			</div>
 			<div class="front-bottom">

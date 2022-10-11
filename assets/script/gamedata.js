@@ -2,10 +2,26 @@ const gamedata = {
 	props: ["content"],
 	data() {
 		return {
+			focus: 1,
 			swiper: null,
 			progress: 0,
-			selected: -1
+			selected: -1,
+			allData: {
+				LM: [
+					{ pc: "./assets/css/img/gamedata/1.png", mb: "./assets/css/img/gamedata/m-1.png" },
+					{ pc: "./assets/css/img/gamedata/2.png", mb: "./assets/css/img/gamedata/m-2.png" }
+				],
+				Maple: [
+					{ pc: "./assets/css/img/gamedata/3.png", mb: "./assets/css/img/gamedata/m-3.png" },
+					{ pc: "./assets/css/img/gamedata/4.png", mb: "./assets/css/img/gamedata/m-4.png" }
+				]
+			}
 		};
+	},
+	watch: {
+		selected(newVal, oldVal) {
+			// this.swiper.destroy();
+		}
 	},
 	mounted() {
 		var _this = this;
@@ -25,13 +41,25 @@ const gamedata = {
 				prevEl: ".swiper-button-prev"
 			}
 		});
-		var _this = this;
+	},
+	methods: {
+		view1() {
+			this.focus = 1;
+			this.swiper.slideTo(0);
+		},
+		view2() {
+			this.focus = 2;
+			this.swiper.slideTo(1);
+		},
+		share() {},
+		download() {},
+		checkIn() {}
 	},
 	template: `
 		<div class="gamedata">
 			<loading type="kv" :progress="progress"></loading>
 			<div class="gamedata-head">
-				<div class="gamedata-container">
+				<div class="gamedata-headBox">
 					<div class="gamedata-headAnim1">
 						<span></span>
 					</div>
@@ -53,26 +81,19 @@ const gamedata = {
 					</select>
 				</div>
 				<div class="gamedata-dataTypeGroup">
-					<a href="javascript:;" class="gamedata-dataType1">總部情報</a>
-					<a href="javascript:;" class="gamedata-dataType2">探員指定</a>
+					<a href="javascript:;" class="gamedata-dataType1" :class="[focus == 1?'on':'']" @click="view1">總部情報</a>
+					<a href="javascript:;" class="gamedata-dataType2" :class="[focus == 2?'on':'']" @click="view2">探員指定</a>
 				</div>
 				<div class="gamedata-swiperGroup">
 					<div class="swiper-box">
 						<div class="swiper gamedata-swiper">
 							<div class="swiper-wrapper">
-								<div class="swiper-slide">
+								<div class="swiper-slide" v-for="data in allData[selected]">
 									<span class="main-1"></span>
 									<span class="main-2"></span>
 									<picture>
-										<source media="(max-width:768px)" srcset="./assets/css/img/gamedata/m-1.png" />
-										<img srcset="./assets/css/img/gamedata/1.png" src="./assets/css/img/gamedata/1.png" alt="" />
-									</picture>
-								</div>
-								<div class="swiper-slide">
-									<span class="user-1"></span>
-									<picture>
-										<source media="(max-width:768px)" srcset="./assets/css/img/gamedata/m-2.png" />
-										<img srcset="./assets/css/img/gamedata/1.png" src="./assets/css/img/gamedata/2.png" alt="" />
+										<source media="(max-width:768px)" :srcset="data.mb" />
+										<img :srcset="data.pc" :src="data.pc" alt="" />
 									</picture>
 								</div>
 							</div>
@@ -82,9 +103,9 @@ const gamedata = {
 					</div>
 				</div>
 				<div class="gamedata-btnGroup">
-					<a href="javascript:;" class="gamedata-btnShare">分享</a>
-					<a href="javascript:;" class="gamedata-btnDownload">下載</a>
-					<a href="javascript:;" class="gamedata-btnCheckIn">立即簽到</a>
+					<a href="javascript:;" class="gamedata-btnShare" @click="share">分享</a>
+					<a href="javascript:;" class="gamedata-btnDownload" @click="download">下載</a>
+					<a href="javascript:;" class="gamedata-btnCheckIn" @click="checkIn">立即簽到</a>
 				</div>
 				<a href="javascript:;" class="gamedata-ruleBtn">規則說明</a>
 			</div>

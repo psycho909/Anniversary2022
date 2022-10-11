@@ -33,6 +33,17 @@
 			height: vw(576);
 			background-size: vw(1920) vw(576);
 		}
+		&Box {
+			width: 1920px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			@include media {
+				width: vw(768);
+			}
+		}
 		&Anim1 {
 			width: 38px;
 			height: 47px;
@@ -40,7 +51,7 @@
 			background-size: 100%;
 			position: absolute;
 			top: 409px;
-			left: 400px;
+			left: 756px;
 			animation: star 1s alternate infinite;
 			@include media {
 				width: vw(38);
@@ -56,7 +67,7 @@
 			background-size: 100%;
 			position: absolute;
 			top: 351px;
-			left: 511px;
+			left: 872px;
 			animation: star 1.6s alternate infinite;
 			animation-delay: 0.3s;
 			@include media {
@@ -73,7 +84,7 @@
 			background-size: 100%;
 			position: absolute;
 			top: 348px;
-			left: 709px;
+			left: 1066px;
 			animation: star 1.4s alternate infinite;
 			@include media {
 				width: vw(36);
@@ -89,7 +100,7 @@
 			background-size: 100%;
 			position: absolute;
 			top: 437px;
-			left: 781px;
+			left: 1145px;
 			animation: star 1s alternate infinite;
 			animation-delay: 0.1s;
 			@include media {
@@ -222,6 +233,10 @@
 			}
 			.lottery-contentBox {
 				margin-bottom: 0;
+				padding: 62px 20px 20px 20px;
+				img {
+					width: 100%;
+				}
 				&:first-child {
 					margin-right: 81px;
 					@include media {
@@ -230,6 +245,7 @@
 				}
 				@include media {
 					margin-bottom: vw(46);
+					padding: vw(62) vw(20) vw(20) vw(20);
 					&:last-child {
 						margin-bottom: 0;
 					}

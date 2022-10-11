@@ -1,8 +1,21 @@
 export const Message = (msg, url, callback) => {
 	var config = {
-		addClass: "default",
+		addClass: "default lb-message",
 		hasCloseBtn: true,
 		hasActionBtn: true,
+		afterOpen: function () {
+			var vh50 = window.innerHeight / 2 + 94 + 34;
+			var contentHeight = $(".gbox-content").outerHeight(true);
+			if (contentHeight >= vh50) {
+				$(".gbox-content").mCustomScrollbar({
+					theme: "light",
+					contentTouchScroll: true,
+					mouseWheel: {
+						preventDefault: true
+					}
+				});
+			}
+		},
 		afterClose: function () {
 			$.gbox.close();
 		},

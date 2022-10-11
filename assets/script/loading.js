@@ -8,8 +8,14 @@ const loading = {
 		this.show = true;
 		var canvas = this.$refs.canvasRef;
 		this.ctx = canvas.getContext("2d");
-		canvas.width = 995;
-		canvas.height = 24;
+		if (isMobile.any) {
+			canvas.width = 675;
+			canvas.height = 46;
+		} else {
+			canvas.width = 995;
+			canvas.height = 24;
+		}
+
 		this.currentProgress = this.progress;
 		var temp = this.currentProgress;
 		this.Draw();

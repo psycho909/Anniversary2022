@@ -356,3 +356,33 @@
 		}
 	}
 }
+.lb-message {
+	.gbox-content {
+		max-height: calc(50vh - 94px - 34px);
+		@include media {
+			max-height: calc(50vh - calc(94 / 768 * 100vw) - calc(34 / 768 * 100vw));
+		}
+		overflow: hidden;
+		.mCustomScrollBox {
+			width: 100%;
+			opacity: 1;
+			.mCSB_scrollTools {
+				.mCSB_dragger .mCSB_dragger_bar {
+					width: 100%;
+					background-color: #ffa300;
+					box-shadow: inset 0 0 0 2px #7e7770;
+					@include media {
+						box-shadow: inset 0 0 0 vw(2) #7e7770;
+					}
+				}
+				.mCSB_draggerRail {
+					width: 16px;
+					background-color: #7e7770;
+					@include media {
+						width: vw(16);
+					}
+				}
+			}
+		}
+	}
+}

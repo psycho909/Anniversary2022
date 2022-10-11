@@ -2,7 +2,7 @@
 	from,
 	50%,
 	to {
-		top: 3%;
+		top: 2%;
 	}
 
 	25%,
@@ -60,6 +60,19 @@
 		background-size: vw(768) vw(1408);
 		background-image: url("./img/front/m-bg.jpg");
 	}
+	&-container {
+		width: 1920px;
+		height: 100%;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		@include media {
+			width: 100%;
+			position: relative;
+		}
+	}
 	&-head {
 		width: 100%;
 		height: 849px;
@@ -68,7 +81,7 @@
 		background-position: center 0;
 		background-repeat: no-repeat;
 		position: relative;
-		overflow: hidden;
+		// overflow: hidden;
 		@include media {
 			height: vw(1341);
 			background-size: vw(768) vw(1341);
@@ -84,10 +97,10 @@
 			left: 50%;
 			transform: translateX(-50%);
 			z-index: 0;
-			animation: movemove 6s linear alternate infinite;
+			animation: movemove 8s linear alternate infinite;
 			@include media {
-				width: vw(692);
-				height: vw(452);
+				width: vw(721);
+				height: vw(474);
 				top: vw(99);
 				background-image: url("./img/front/m-slogan.png");
 			}
@@ -115,7 +128,8 @@
 			height: 136px;
 			position: absolute;
 			top: 543px;
-			left: 227px;
+			left: 400px;
+			overflow: hidden;
 			clip-path: polygon(103.18% 101.21%, 87.5% 142px, -1.07% 11.03%, 5.63% -3.49%);
 			span {
 				width: 224px;
@@ -126,7 +140,7 @@
 				top: -15px;
 				left: -22px;
 				display: block;
-				animation: movemove2 3s linear alternate infinite;
+				animation: movemove2 3.5s linear alternate infinite;
 			}
 			@include media {
 				display: none;
@@ -136,8 +150,9 @@
 			width: 259px;
 			height: 245px;
 			position: absolute;
-			top: 476px;
-			right: 134px;
+			top: 480px;
+			right: 298px;
+			overflow: hidden;
 			clip-path: polygon(86.85% -1%, 100.77% 4px, 6.58% 100%, -1% 93.57%);
 			span {
 				width: 301px;
@@ -178,7 +193,7 @@
 		}
 	}
 	&-loginBtn {
-		width: 243px;
+		width: 248px;
 		height: 116px;
 		position: absolute;
 		top: 874px;
@@ -193,7 +208,7 @@
 			background-position-x: 100%;
 		}
 		@include media {
-			width: vw(243);
+			width: vw(248);
 			height: vw(116);
 			top: vw(581);
 		}
@@ -367,7 +382,7 @@
 				}
 			}
 			&[data-box="bn"] {
-				margin-top: 134px;
+				margin-top: 100px;
 				margin-bottom: 346px;
 				background-color: transparent;
 				border-radius: 0;
@@ -432,17 +447,20 @@
 				border-radius: 20px;
 				border: 2px solid #7e7770;
 				box-sizing: border-box;
-				padding: 94px 20px 20px 20px;
+				padding: 62px 20px 20px 20px;
 				box-shadow: 0 0 0 4px #ffc23b, 6px 12px 0 8px #4b453e;
 				min-height: 280px;
 				position: relative;
+				img {
+					width: 100%;
+				}
 				@include media {
 					max-width: calc(var(--mw) / 768 * 100vw);
 					background-image: linear-gradient(to bottom, #d3cfc1 vw(40), #7e7770 vw(41), #7e7770 vw(42), #e7e4dd vw(43), #e7e4dd 100%);
 					box-shadow: 0 0 0 vw(4) #ffc23b, vw(6) vw(6) 0 vw(6) #4b453e;
 					margin-bottom: vw(38);
-					height: vw(280);
-					padding: vw(94) vw(20) vw(20) vw(20);
+					min-height: vw(280);
+					padding: vw(62) vw(20) vw(20) vw(20);
 					&:last-child {
 						margin-bottom: 0;
 					}
@@ -463,16 +481,10 @@
 						right: vw(24);
 					}
 				}
-				&:first-child {
-					margin-left: 24px;
-					@include media {
-						margin-left: 0;
-					}
-				}
 				&:last-child {
 					position: absolute;
 					top: 170px;
-					right: 68px;
+					right: -62px;
 					@include media {
 						position: relative;
 						top: 0;

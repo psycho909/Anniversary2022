@@ -81,7 +81,7 @@ const lottery = {
 		<div class="lottery">
 			<lottery-loading v-if="lotteryLoading"></lottery-loading>
 			<div class="lottery-head">
-				<div class="lottery-container">
+				<div class="lottery-headBox">
 					<div class="lottery-headAnim1"></div>
 					<div class="lottery-headAnim2"></div>
 					<div class="lottery-headAnim3"></div>
@@ -131,8 +131,8 @@ const lottery = {
 						</div>
 					</div>
 					<div class="lottery-contentBoxBn">
-						<div class="lottery-contentBox" style="--w:495;--mw:625;"></div>
-						<div class="lottery-contentBox" style="--w:495;--mw:625;"></div>
+						<div class="lottery-contentBox" style="--w:495;--mw:625;"><img src="./assets/css/img/front/item1.jpg" alt="" /></div>
+						<div class="lottery-contentBox" style="--w:495;--mw:625;"><img src="./assets/css/img/front/item1.jpg" alt="" /></div>
 					</div>
 				</div>
 				<a href="javascript:;" class="lottery-ruleBtn">規則說明</a>
