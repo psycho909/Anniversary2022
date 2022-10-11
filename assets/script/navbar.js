@@ -7,11 +7,25 @@ const navbar = {
 			default: ""
 		}
 	},
+	data() {
+		return {
+			hamburger: false
+		};
+	},
+	methods: {
+		openMenu() {
+			if (this.hamburger) {
+				this.hamburger = false;
+			} else {
+				this.hamburger = true;
+			}
+		}
+	},
 	template: `
         <div class="navbar">
             <a href="javascript:;" class="navbar-home"></a>
-            <a href="javascript:;" class="navbar-hamburger"></a>
-            <div class="navbar-box">
+            <a href="javascript:;" class="navbar-hamburger" @click="openMenu"></a>
+            <div class="navbar-box" :class="[hamburger?'on':'']">
                 <div class="navbar-list">
                     <a href="javascript:;" class="navbar-nav">遊戲清單</a>
                     <a href="javascript:;" class="navbar-nav">數據情報館</a>
