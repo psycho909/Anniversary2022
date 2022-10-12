@@ -556,6 +556,7 @@
 					transform: translate(-50%, -50%);
 					background-size: 100%;
 					user-select: none;
+					z-index: 1;
 					@include media {
 						width: vw(72);
 						height: vw(72);
