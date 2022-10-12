@@ -43,13 +43,15 @@ const gamedata = {
 		});
 	},
 	methods: {
-		view1() {
-			this.focus = 1;
-			this.swiper.slideTo(0);
-		},
-		view2() {
-			this.focus = 2;
-			this.swiper.slideTo(1);
+		view(type) {
+			if (type == 1) {
+				this.focus = 1;
+				this.swiper.slideTo(0);
+			}
+			if (type == 2) {
+				this.focus = 2;
+				this.swiper.slideTo(1);
+			}
 		},
 		share() {},
 		download() {},
@@ -81,10 +83,10 @@ const gamedata = {
 					</select>
 				</div>
 				<div class="gamedata-dataTypeGroup">
-					<a href="javascript:;" class="gamedata-dataType1" :class="[focus == 1?'on':'']" @click="view1">總部情報</a>
-					<a href="javascript:;" class="gamedata-dataType2" :class="[focus == 2?'on':'']" @click="view2">探員指定</a>
+					<a href="javascript:;" class="gamedata-dataType1" :class="[focus == 1?'on':'']" @click="view(1)">總部情報</a>
+					<a href="javascript:;" class="gamedata-dataType2" :class="[focus == 2?'on':'']" @click="view(2)">探員指定</a>
 				</div>
-				<div class="gamedata-swiperGroup">
+				<div class="gamedata-swiperGroup" :class="[selected == -1?'off':'']">
 					<div class="swiper-box">
 						<div class="swiper gamedata-swiper">
 							<div class="swiper-wrapper">

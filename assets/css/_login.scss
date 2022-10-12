@@ -410,55 +410,55 @@
 			}
 		}
 		&Back {
-			width: 201px;
-			height: 66px;
+			width: 200px;
+			height: 65px;
 			background-image: url("./img/login/btn-back.png");
 			background-size: 200%;
 			@include hover {
 				background-position-x: 100%;
 			}
 			@include media {
-				width: vw(201);
-				height: vw(66);
+				width: vw(200);
+				height: vw(65);
 			}
 		}
 		&Next {
-			width: 201px;
-			height: 66px;
+			width: 200px;
+			height: 65px;
 			background-image: url("./img/login/btn-next.png");
 			background-size: 200%;
 			@include hover {
 				background-position-x: 100%;
 			}
 			@include media {
-				width: vw(201);
-				height: vw(66);
+				width: vw(200);
+				height: vw(65);
 			}
 		}
 		&Guide {
-			width: 201px;
-			height: 66px;
+			width: 200px;
+			height: 65px;
 			background-image: url("./img/login/btn-guide.png");
 			background-size: 200%;
 			@include hover {
 				background-position-x: 100%;
 			}
 			@include media {
-				width: vw(201);
-				height: vw(66);
+				width: vw(200);
+				height: vw(65);
 			}
 		}
 		&Confirm {
-			width: 201px;
-			height: 66px;
+			width: 200px;
+			height: 65px;
 			background-image: url("./img/login/btn-confirm.png");
 			background-size: 200%;
 			@include hover {
 				background-position-x: 100%;
 			}
 			@include media {
-				width: vw(201);
-				height: vw(66);
+				width: vw(200);
+				height: vw(65);
 			}
 		}
 	}

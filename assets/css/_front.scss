@@ -193,8 +193,8 @@
 		}
 	}
 	&-loginBtn {
-		width: 248px;
-		height: 116px;
+		width: 247px;
+		height: 115px;
 		position: absolute;
 		top: 874px;
 		left: 50%;
@@ -208,8 +208,8 @@
 			background-position-x: 100%;
 		}
 		@include media {
-			width: vw(248);
-			height: vw(116);
+			width: vw(306);
+			height: vw(142);
 			top: vw(581);
 		}
 	}
@@ -397,8 +397,8 @@
 				}
 			}
 			&-btn {
-				width: 201px;
-				height: 66px;
+				width: 200px;
+				height: 65px;
 				background-size: 200%;
 				font-size: 0;
 				@include hover {
@@ -448,7 +448,7 @@
 				border: 2px solid #7e7770;
 				box-sizing: border-box;
 				padding: 62px 20px 20px 20px;
-				box-shadow: 0 0 0 4px #ffc23b, 6px 12px 0 8px #4b453e;
+				box-shadow: 0 0 0 4px #ffc23b, 12px 12px 0 0 #4b453e;
 				min-height: 280px;
 				position: relative;
 				img {
@@ -457,7 +457,7 @@
 				@include media {
 					max-width: calc(var(--mw) / 768 * 100vw);
 					background-image: linear-gradient(to bottom, #d3cfc1 vw(40), #7e7770 vw(41), #7e7770 vw(42), #e7e4dd vw(43), #e7e4dd 100%);
-					box-shadow: 0 0 0 vw(4) #ffc23b, vw(6) vw(6) 0 vw(6) #4b453e;
+					box-shadow: 0 0 0 vw(4) #ffc23b, vw(12) vw(12) 0 0 #4b453e;
 					margin-bottom: vw(38);
 					min-height: vw(280);
 					padding: vw(62) vw(20) vw(20) vw(20);

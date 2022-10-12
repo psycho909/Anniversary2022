@@ -260,8 +260,8 @@
 			justify-content: center;
 		}
 		&Lottery {
-			width: 437px;
-			height: 75px;
+			width: 436px;
+			height: 74px;
 			background-size: 200%;
 			background-image: url("./img/lottery/btn-lottery.png");
 			display: block;
@@ -271,8 +271,8 @@
 				background-position-x: 100%;
 			}
 			@include media {
-				width: vw(437);
-				height: vw(75);
+				width: vw(436);
+				height: vw(74);
 				margin-bottom: vw(30);
 			}
 		}

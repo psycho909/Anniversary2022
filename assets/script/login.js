@@ -80,7 +80,7 @@ const login = {
 	},
 	template: `
         <div class="login">
-			<div class="login-contentBox" data-step="1" style="--w:847;--mw:645" v-if="step == 1">
+			<div class="login-contentBox" data-step="1" style="--w:847;--mw:645" v-show="step == 1">
 				<div class="login-contentTitle">請選擇欲參加活動的遊戲_</div>
 				<div class="login-selectGameGroup">
 					<div class="login-selectGame" :data-game="selectGame"></div>
@@ -93,7 +93,7 @@ const login = {
 					<a href="javascript:;" class="login-btnNext" @click="stepNext(2)">下一步</a>
 				</div>
 			</div>
-			<div class="login-contentBox" data-step="2" style="--w:847;--mw:645" v-if="step == 2">
+			<div class="login-contentBox" data-step="2" style="--w:847;--mw:645" v-show="step == 2">
 				<div class="login-contentTitle">請選擇你登入的方式_</div>
 				<div class="login-notice">
 					<span>*登入帳號需與遊戲帳號對應</span>
@@ -115,7 +115,7 @@ const login = {
 					<a href="javascript:;" class="login-btnGuide">綁定教學</a>
 				</div>
 			</div>
-			<div class="login-contentBox" data-step="3" style="--w:847;--mw:645" v-if="step == 3">
+			<div class="login-contentBox" data-step="3" style="--w:847;--mw:645" v-show="step == 3">
 				<div class="login-contentTitle">請選擇欲參加活動的角色_</div>
 				<div class="login-userInfo">
 					<div class="login-selectServerGroup">

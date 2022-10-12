@@ -111,16 +111,16 @@
 		}
 	}
 	&-btnLogin {
-		width: 180px;
-		height: 59px;
+		width: 179px;
+		height: 58px;
 		background-size: 200%;
 		background-image: url("./img/navbar/btn-login.png");
 		@include hover {
 			background-position-x: 100%;
 		}
 		@include media {
-			width: vw(243);
-			height: vw(116);
+			width: vw(244);
+			height: vw(113);
 			background-image: url("./img/navbar/m-btn-login.png");
 			margin: 0 auto;
 		}
