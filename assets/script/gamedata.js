@@ -24,6 +24,51 @@ const gamedata = {
 		}
 	},
 	mounted() {
+		const RequestStack = [];
+		function closeLoading() {
+			console.log("closeLoading ");
+		}
+		// 添加请求拦截器
+		axios.interceptors.request.use(
+			function (config) {
+				// 开启 Loading
+				if (config.fullscreen) {
+					!loadingInstance && (loadingInstance = Loading.service(LoadingOpts));
+					RequestStack.push(RequestId++);
+				}
+				return config;
+			},
+			function (error) {
+				// 发生错误时清除一个元素
+				RequestStack.pop();
+				closeLoading();
+				return Promise.reject(error);
+			}
+		);
+
+		// 添加响应拦截器，不管成功还是失败都需要关闭 loading
+		axios.interceptors.response.use(
+			function (response) {
+				RequestStack.pop();
+				closeLoading();
+				return response;
+			},
+			function (error) {
+				RequestStack.pop();
+				closeLoading();
+				return Promise.reject(error);
+			}
+		);
+		console.log("in");
+		axios
+			.get("https://reqres.in/api/users?delay=3")
+			.then((res) => {
+				console.log(res);
+				console.log("later");
+			})
+			.finally(() => {
+				console.log("finally");
+			});
 		var _this = this;
 		$(".gamedata-selectControl").niceSelect();
 		Vue.nextTick(() => {

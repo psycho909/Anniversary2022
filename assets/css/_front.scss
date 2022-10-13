@@ -56,6 +56,7 @@
 	background-position: center 0;
 	background-size: 1920px 870px;
 	position: relative;
+	overflow: hidden;
 	@include media {
 		background-size: vw(768) vw(1408);
 		background-image: url("./img/front/m-bg.jpg");

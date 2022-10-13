@@ -9,15 +9,15 @@ const loading = {
 	},
 	watch: {
 		progress(newVal, oldVal) {
-			if (newVal > 0 && !this.show) {
+			if (newVal && !this.show) {
 				this.Run();
 				return;
 			}
 			clearInterval(this.timer);
-			this.currentProgress = newVal;
+			this.currentProgress = 100;
 			this.DrawProgress(this.currentProgress);
 			setTimeout(() => {
-				if (newVal == 100 || !newVal) {
+				if (!newVal) {
 					this.show = false;
 					this.currentProgress = 0;
 					$("body").removeClass("ov-hidden");
