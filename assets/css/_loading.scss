@@ -1,6 +1,7 @@
 .loading {
 	width: 100%;
-	min-height: calc(100vh - 91px);
+	height: 100%;
+	// min-height: calc(100vh - 91px);
 	// padding: 200px 0;
 	background-repeat: repeat;
 	background-size: 139px 138px;
@@ -9,13 +10,16 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
+	position: fixed;
+	// top: 91px;
 	top: 0;
 	left: 0;
-	z-index: 99;
+	z-index: 98;
 	@include media {
 		background-size: vw(139) vw(138);
-		height: calc(100vh - calc(100 / 768 * 100vw));
+		// height: calc(100vh - calc(100 / 768 * 100vw));
+		// top: calc(100 / 768 * 100vw);
+		top: 0;
 	}
 	&-text {
 		display: flex;

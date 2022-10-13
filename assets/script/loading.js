@@ -5,41 +5,19 @@ const loading = {
 			this.show = false;
 			return;
 		}
-		this.show = true;
-		var canvas = this.$refs.canvasRef;
-		this.ctx = canvas.getContext("2d");
-		if (isMobile.any) {
-			canvas.width = 675;
-			canvas.height = 46;
-		} else {
-			canvas.width = 995;
-			canvas.height = 24;
-		}
-
-		this.currentProgress = this.progress;
-		var temp = this.currentProgress;
-		this.Draw();
-		this.DrawProgress(this.currentProgress);
-		$("body").addClass("ov-hidden");
-		this.timer = setInterval(() => {
-			++temp;
-			if (temp == 99) {
-				this.currentProgress = temp;
-				clearInterval(this.timer);
-				this.DrawProgress(this.currentProgress);
-				return;
-			}
-			this.currentProgress = temp;
-			this.DrawProgress(this.currentProgress);
-		}, 300);
+		this.Run();
 	},
 	watch: {
 		progress(newVal, oldVal) {
+			if (newVal > 0 && !this.show) {
+				this.Run();
+				return;
+			}
 			clearInterval(this.timer);
 			this.currentProgress = newVal;
 			this.DrawProgress(this.currentProgress);
 			setTimeout(() => {
-				if (newVal == 100) {
+				if (newVal == 100 || !newVal) {
 					this.show = false;
 					this.currentProgress = 0;
 					$("body").removeClass("ov-hidden");
@@ -56,6 +34,38 @@ const loading = {
 		};
 	},
 	methods: {
+		Init() {
+			var canvas = this.$refs.canvasRef;
+			this.ctx = canvas.getContext("2d");
+			if (isMobile.any) {
+				canvas.width = 675;
+				canvas.height = 46;
+			} else {
+				canvas.width = 995;
+				canvas.height = 24;
+			}
+		},
+		Run() {
+			this.show = true;
+			Vue.nextTick(() => {
+				this.Init();
+				var temp = this.currentProgress;
+				this.Draw();
+				this.DrawProgress(this.currentProgress);
+				$("body").addClass("ov-hidden");
+				this.timer = setInterval(() => {
+					++temp;
+					if (temp == 99) {
+						this.currentProgress = temp;
+						clearInterval(this.timer);
+						this.DrawProgress(this.currentProgress);
+						return;
+					}
+					this.currentProgress = temp;
+					this.DrawProgress(this.currentProgress);
+				}, 100);
+			});
+		},
 		Draw() {
 			var x = 0;
 			for (var i = 0; i < 20; i++) {

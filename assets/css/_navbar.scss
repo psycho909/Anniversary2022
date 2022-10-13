@@ -3,6 +3,8 @@
 	display: flex;
 	align-items: stretch;
 	padding-left: 32px;
+	position: relative;
+	z-index: 99;
 	@include media {
 		// display: none;
 		flex-wrap: wrap;
